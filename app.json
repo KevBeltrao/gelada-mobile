@@ -1,0 +1,12 @@
+{
+  "name": "gelada-mobile",
+  "displayName": "gelada-mobile",
+  "expo": {
+    "name": "gelada-mobile",
+    "slug": "gelada-mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
