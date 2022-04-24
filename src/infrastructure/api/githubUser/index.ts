@@ -1,3 +1,4 @@
+// ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import api from '../api';
 
 export const detail = async (

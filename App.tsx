@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Home from './src/views/Pages/Home';
+
+// ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import GithubUserProvider from './src/application/githubUserProvider';
 
 export default function App() {

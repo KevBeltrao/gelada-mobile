@@ -1,3 +1,4 @@
+// ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import { Dispatch } from 'react';
 import { ActionTypeType } from './actions';
 

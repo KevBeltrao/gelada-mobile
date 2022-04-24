@@ -4,13 +4,13 @@ import { githubUserRequests } from '../../infrastructure/api';
 
 export const detailUser = async (
   action: ActionType,
-  callback: Dispatch<ActionType>,
+  dispatch: Dispatch<ActionType>,
 ) => {
   const userInfo = await githubUserRequests.detail(
     action.payload.login as string,
   );
 
-  callback({
+  dispatch({
     ...action,
     payload: userInfo,
   });

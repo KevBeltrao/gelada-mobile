@@ -1,5 +1,4 @@
 import React, { FC, Dispatch, SetStateAction } from 'react';
-import { Text } from 'react-native';
 
 import { githubUserTypes } from '../../../application/githubUserProvider';
 import {
@@ -28,26 +27,24 @@ const Home: FC<HomeTypes> = ({
   onPress,
   cleanData,
   isLoading,
-}) => {
-  return (
-    <Container>
-      <Title>Home</Title>
+}) => (
+  <Container>
+    <Title>Home</Title>
 
-      <LoginInput value={inputValue} onChangeText={setInputValue} />
+    <LoginInput value={inputValue} onChangeText={setInputValue} />
 
-      <SubmitButton onPress={onPress} disabled={isLoading}>
-        <ButtonText>{isLoading ? 'Carregando...' : 'Buscar'}</ButtonText>
-      </SubmitButton>
+    <SubmitButton onPress={onPress} disabled={isLoading}>
+      <ButtonText>{isLoading ? 'Carregando...' : 'Buscar'}</ButtonText>
+    </SubmitButton>
 
-      <SubmitButton negative onPress={cleanData}>
-        <ButtonText negative>Limpar dados</ButtonText>
-      </SubmitButton>
+    <SubmitButton negative onPress={cleanData}>
+      <ButtonText negative>Limpar dados</ButtonText>
+    </SubmitButton>
 
-      {githubUser.avatar_url && (
-        <GithubUserImage source={{ uri: githubUser.avatar_url }} />
-      )}
-    </Container>
-  );
-};
+    {githubUser.avatar_url && (
+      <GithubUserImage source={{ uri: githubUser.avatar_url }} />
+    )}
+  </Container>
+);
 
 export default Home;

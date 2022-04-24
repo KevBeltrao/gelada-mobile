@@ -1,3 +1,4 @@
+// ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import React, { FC, createContext, useReducer } from 'react';
 import * as actions from './actions';
 import * as middlewares from './middlewares';
@@ -17,10 +18,8 @@ const Provider: FC = ({ children }) => {
     INITIAL_VALUE,
   );
 
-  const actionTypesWithMiddleware = [actions.GET_USER];
-
   const dispatchWithMiddlewares = async (action: ActionType) => {
-    if (actionTypesWithMiddleware.includes(action.type)) {
+    if (actions.GET_USER === action.type) {
       return await middlewares.detailUser(action, githubUserDispatch);
     }
 
