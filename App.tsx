@@ -1,10 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Home from './src/views/Pages/Home';
+import GithubUserProvider from './src/application/githubUserProvider';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <GithubUserProvider>
+        <Home />
+      </GithubUserProvider>
     </View>
   );
 }
