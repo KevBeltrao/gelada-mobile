@@ -10,6 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/metro-config": "^0.66.0",
     "axios": "^0.26.1",
     "expo": "~41.0.1",
     "expo-splash-screen": "~0.10.2",
@@ -20,6 +21,7 @@
     "react-native-gesture-handler": "~1.10.2",
     "react-native-reanimated": "~2.1.0",
     "react-native-screens": "~3.0.0",
+    "react-native-svg-transformer": "^1.0.0",
     "react-native-unimodules": "~0.13.3",
     "react-native-web": "~0.13.12",
     "styled-components": "^5.3.5"
