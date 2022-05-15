@@ -1,29 +1,34 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar, Text } from 'react-native';
 
-import Home from './src/views/pages/Home';
+import {
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_700Bold,
+  useFonts,
+} from '@expo-google-fonts/montserrat';
+
+import Home from './src/views/Pages/Home';
 
 // ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import GithubUserProvider from './src/application/githubUserProvider';
-import AppThemeProvider from './src/views/theme';
+import AppThemeProvider from './src/views/theme/themeProvider';
 
 export default function App() {
-  return (
-    <AppThemeProvider>
-      <View style={styles.container}>
-        <GithubUserProvider>
-          <Home />
-        </GithubUserProvider>
-      </View>
-    </AppThemeProvider>
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
+  });
+
+  return fontsLoaded ? (
+    <GithubUserProvider>
+      <StatusBar barStyle={'light-content'} />
+      <AppThemeProvider>
+        <Home />
+      </AppThemeProvider>
+    </GithubUserProvider>
+  ) : (
+    <Text>Carregaando...</Text>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
