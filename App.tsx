@@ -8,7 +8,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/montserrat';
 
-import Home from './src/views/Pages/Home';
+import History from './src/views/Pages/History';
 
 // ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import GithubUserProvider from './src/application/githubUserProvider';
@@ -25,7 +25,7 @@ export default function App() {
     <GithubUserProvider>
       <StatusBar barStyle={'light-content'} />
       <AppThemeProvider>
-        <Home />
+        <History />
       </AppThemeProvider>
     </GithubUserProvider>
   ) : (

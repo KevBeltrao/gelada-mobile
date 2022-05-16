@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from './Button';
 
 interface WrapperTypes {
-  onPress: () => void;
+  onPress?: () => void;
 }
 const Wrapper: React.FC<WrapperTypes> = ({ children, onPress }) => {
   return <Button onPress={onPress}>{children}</Button>;

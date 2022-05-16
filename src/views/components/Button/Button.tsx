@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyledButton, ButtonText } from './styles';
 
 interface ButtonTypes {
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 const Button: React.FC<ButtonTypes> = ({ children, onPress }) => (

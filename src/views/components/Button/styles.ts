@@ -5,7 +5,7 @@ export const StyledButton = styled(TouchableOpacity)`
   background-color: #8aacd6;
   padding: 8px;
   align-items: center;
-  align-self: flex-start;
+  align-self: center;
   border-radius: 4px;
 `;
 
