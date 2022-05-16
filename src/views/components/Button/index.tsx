@@ -4,9 +4,18 @@ import Button from './Button';
 
 interface WrapperTypes {
   onPress?: () => void;
+  type?: 'primary' | 'secondary';
 }
-const Wrapper: React.FC<WrapperTypes> = ({ children, onPress }) => {
-  return <Button onPress={onPress}>{children}</Button>;
+const Wrapper: React.FC<WrapperTypes> = ({
+  children,
+  onPress,
+  type = 'primary',
+}) => {
+  return (
+    <Button onPress={onPress} type={type}>
+      {children}
+    </Button>
+  );
 };
 
 export default Wrapper;
