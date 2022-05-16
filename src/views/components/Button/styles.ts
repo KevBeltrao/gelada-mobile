@@ -1,5 +1,5 @@
 import { TouchableOpacity, Text } from 'react-native';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const StyledButton = styled(TouchableOpacity)`
   background-color: ${({ type, theme }) => {
@@ -15,6 +15,11 @@ export const StyledButton = styled(TouchableOpacity)`
   align-items: center;
   align-self: center;
   border-radius: 4px;
+  ${({ fill }) =>
+    fill &&
+    css`
+      width: 100%;
+    `}
 `;
 
 export const ButtonText = styled(Text)`

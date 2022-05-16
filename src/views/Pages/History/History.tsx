@@ -6,7 +6,9 @@ const History: FC = () => (
   <Container>
     <Whistle />
     <ScreenText>Nenhuma partida foi iniciada</ScreenText>
-    <Button type="primary">Iniciar nova partida</Button>
+    <Button type="primary" fill>
+      Iniciar nova partida
+    </Button>
   </Container>
 );
 
