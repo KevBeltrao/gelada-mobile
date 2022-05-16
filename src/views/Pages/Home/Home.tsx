@@ -30,7 +30,6 @@ const Home: FC<HomeTypes> = ({
 }) => (
   <Container>
     <Title>Home</Title>
-
     <LoginInput value={inputValue} onChangeText={setInputValue} />
 
     <SubmitButton onPress={onPress} disabled={isLoading}>
