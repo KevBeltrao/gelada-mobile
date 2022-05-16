@@ -1,6 +1,4 @@
 import React, { FC, Dispatch, SetStateAction } from 'react';
-import { Alert } from 'react-native';
-import Button from '../../components/Button';
 
 import { githubUserTypes } from '../../../application/githubUserProvider';
 import {
@@ -32,7 +30,6 @@ const Home: FC<HomeTypes> = ({
 }) => (
   <Container>
     <Title>Home</Title>
-    <Button onPress={() => Alert.alert('ALERTA')}>Clique em mim</Button>
     <LoginInput value={inputValue} onChangeText={setInputValue} />
 
     <SubmitButton onPress={onPress} disabled={isLoading}>
