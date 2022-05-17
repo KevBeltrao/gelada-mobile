@@ -4,7 +4,7 @@ import Button from './Button';
 
 interface WrapperTypes {
   onPress?: () => void;
-  type?: 'primary' | 'secondary';
+  type?: 'primary' | 'secondary' | 'confirm' | 'transparent';
   fill?: boolean;
   disabled: boolean;
   children: React.ReactNode;
