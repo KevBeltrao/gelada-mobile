@@ -10,7 +10,7 @@ export const StyledButton = styled(TouchableOpacity)`
       return theme.colors.lightRed;
     }
     if (type === 'confirm') {
-      return theme.colors.green;
+      return theme.colors.lightGreen;
     }
     if (type === 'transparent') {
       return 'transparent';
