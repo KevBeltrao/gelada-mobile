@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Container, Whistle, ScreenText, InnerContent } from './styles';
 import Button from '../../components/Button';
 
-const History: FC = () => (
+const NotStartedMatch: FC = () => (
   <Container>
     <InnerContent>
       <Whistle />
@@ -16,4 +16,4 @@ const History: FC = () => (
   </Container>
 );
 
-export default History;
+export default NotStartedMatch;
