@@ -9,6 +9,12 @@ export const StyledButton = styled(TouchableOpacity)`
     if (type === 'secondary') {
       return theme.colors.lightRed;
     }
+    if (type === 'confirm') {
+      return theme.colors.green;
+    }
+    if (type === 'transparent') {
+      return 'transparent';
+    }
     return theme.colors.lightBlue;
   }};
   padding: 8px;
@@ -29,6 +35,12 @@ export const ButtonText = styled(Text)`
     }
     if (type === 'secondary') {
       return theme.colors.darkRed;
+    }
+    if (type === 'confirm') {
+      return theme.colors.darkGreen;
+    }
+    if (type === 'transparent') {
+      return theme.colors.dark;
     }
     return theme.colors.darkBlue;
   }};
