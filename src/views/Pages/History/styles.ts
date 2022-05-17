@@ -15,6 +15,11 @@ export const Whistle = styled(Whistleimg)`
   width: 100px;
 `;
 
+export const InnerContent = styled(View)`
+  width: 80%;
+  align-items: center;
+`;
+
 export const ScreenText = styled(Text)`
   color: ${({ theme }) => theme.colors.dark};
   font-family: 'Montserrat';
