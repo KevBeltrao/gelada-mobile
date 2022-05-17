@@ -32,6 +32,6 @@ export const ButtonText = styled(Text)`
     }
     return theme.colors.darkBlue;
   }};
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 `;

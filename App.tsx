@@ -9,6 +9,7 @@ import {
 } from '@expo-google-fonts/montserrat';
 
 import Home from './src/views/Pages/Home';
+import Login from './src/views/Pages/Login/Login';
 
 // ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import GithubUserProvider from './src/application/githubUserProvider';
@@ -21,14 +22,16 @@ export default function App() {
     Montserrat_700Bold,
   });
 
-  return fontsLoaded ? (
+  return (
     <GithubUserProvider>
       <StatusBar barStyle={'light-content'} />
-      <AppThemeProvider>
+      {fontsLoaded ? (
+        <AppThemeProvider>
+          <Login />
+        </AppThemeProvider>
+      ) : (
         <Home />
-      </AppThemeProvider>
+      )}
     </GithubUserProvider>
-  ) : (
-    <Text>Carregaando...</Text>
   );
 }
