@@ -1,5 +1,6 @@
 import React from 'react';
-import { StatusBar, Text } from 'react-native';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
   Montserrat_400Regular,
@@ -11,8 +12,6 @@ import {
 import Home from './src/views/Pages/Home';
 import Login from './src/views/Pages/Login';
 
-// ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
-import GithubUserProvider from './src/application/githubUserProvider';
 import AuthProvider from './src/application/loginProvider/Provider';
 import AppThemeProvider from './src/views/theme/themeProvider';
 
@@ -24,8 +23,8 @@ export default function App() {
   });
 
   return (
-    <AuthProvider>
-      <GithubUserProvider>
+    <NavigationContainer>
+      <AuthProvider>
         <StatusBar barStyle={'light-content'} />
         {fontsLoaded ? (
           <AppThemeProvider>
@@ -34,7 +33,7 @@ export default function App() {
         ) : (
           <Home />
         )}
-      </GithubUserProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </NavigationContainer>
   );
 }
