@@ -9,10 +9,11 @@ import {
 } from '@expo-google-fonts/montserrat';
 
 import Home from './src/views/Pages/Home';
-import Login from './src/views/Pages/Login/Login';
+import Login from './src/views/Pages/Login';
 
 // ============= THIS FILE IS A GITHUB INTEGRATION TO BE USED AS AN EXAMPLE ===========
 import GithubUserProvider from './src/application/githubUserProvider';
+import AuthProvider from './src/application/loginProvider/Provider';
 import AppThemeProvider from './src/views/theme/themeProvider';
 
 export default function App() {
@@ -23,15 +24,17 @@ export default function App() {
   });
 
   return (
-    <GithubUserProvider>
-      <StatusBar barStyle={'light-content'} />
-      {fontsLoaded ? (
-        <AppThemeProvider>
-          <Login />
-        </AppThemeProvider>
-      ) : (
-        <Home />
-      )}
-    </GithubUserProvider>
+    <AuthProvider>
+      <GithubUserProvider>
+        <StatusBar barStyle={'light-content'} />
+        {fontsLoaded ? (
+          <AppThemeProvider>
+            <Login />
+          </AppThemeProvider>
+        ) : (
+          <Home />
+        )}
+      </GithubUserProvider>
+    </AuthProvider>
   );
 }
