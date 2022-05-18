@@ -35,6 +35,11 @@ export const TeamLetter = styled(Text)`
     red ? theme.colors.darkRed : theme.colors.darkBlue};
   font-weight: 700;
   font-size: 14px;
+  text-align: center;
+
+  align-items: center;
+  justify-content: center;
+  background: green;
 `;
 
 export const TeamText = styled(Text)`

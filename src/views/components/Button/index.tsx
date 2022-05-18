@@ -6,7 +6,7 @@ interface WrapperTypes {
   onPress?: () => void;
   type?: 'primary' | 'secondary' | 'confirm' | 'transparent';
   fill?: boolean;
-  disabled: boolean;
+  disabled?: boolean;
   children: React.ReactNode;
 }
 const Wrapper: React.FC<WrapperTypes> = ({
