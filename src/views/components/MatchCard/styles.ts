@@ -6,7 +6,7 @@ export const Touchable = styled(TouchableOpacity)``;
 export const Container = styled(View)`
   width: 100%;
   padding: 10px 30px;
-  background: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.light};
 
   flex-direction: row;
   justify-content: space-between;
@@ -15,7 +15,7 @@ export const Container = styled(View)`
 
 export const TeamContainer = styled(View)`
   align-items: center;
-  flex: 1;
+  width: 60px;
 `;
 
 export const Circle = styled(View)`
@@ -39,7 +39,6 @@ export const TeamLetter = styled(Text)`
 
   align-items: center;
   justify-content: center;
-  background: green;
 `;
 
 export const TeamText = styled(Text)`

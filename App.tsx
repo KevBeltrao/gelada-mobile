@@ -13,6 +13,8 @@ import Home from './src/views/Pages/Home';
 import AuthProvider from './src/application/loginProvider/Provider';
 import AppThemeProvider from './src/views/theme/themeProvider';
 
+import MatchesProvider from './src/application/matchesProvider';
+
 import AuthNavigation from './src/views/Navigation/AuthNavigation';
 import UnauthNavigation from './src/views/Navigation/UnauthNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -45,20 +47,22 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <StatusBar barStyle={'light-content'} />
-      <CheckAuthorizationContext.Provider value={checkAuthorization}>
-        <AppThemeProvider>
-          {fontsLoaded ? (
-            isAuthorized ? (
-              <AuthNavigation />
+      <MatchesProvider>
+        <StatusBar barStyle={'light-content'} />
+        <CheckAuthorizationContext.Provider value={checkAuthorization}>
+          <AppThemeProvider>
+            {fontsLoaded ? (
+              isAuthorized ? (
+                <AuthNavigation />
+              ) : (
+                <UnauthNavigation />
+              )
             ) : (
-              <UnauthNavigation />
-            )
-          ) : (
-            <Home />
-          )}
-        </AppThemeProvider>
-      </CheckAuthorizationContext.Provider>
+              <Home />
+            )}
+          </AppThemeProvider>
+        </CheckAuthorizationContext.Provider>
+      </MatchesProvider>
     </AuthProvider>
   );
 }
