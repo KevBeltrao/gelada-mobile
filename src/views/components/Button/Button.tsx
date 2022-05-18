@@ -5,10 +5,18 @@ interface ButtonTypes {
   onPress?: () => void;
   type: 'primary' | 'secondary';
   fill: boolean;
+  disabled: boolean;
+  children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonTypes> = ({ children, onPress, type, fill }) => (
-  <StyledButton onPress={onPress} type={type} fill={fill}>
+const Button: React.FC<ButtonTypes> = ({
+  children,
+  onPress,
+  type,
+  fill,
+  disabled,
+}) => (
+  <StyledButton disabled={disabled} onPress={onPress} type={type} fill={fill}>
     <ButtonText type={type}>{children}</ButtonText>
   </StyledButton>
 );

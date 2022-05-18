@@ -1,7 +1,15 @@
 import React, { FC } from 'react';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import { Container, Logo, Title, ScrollContainer, InputWrapper } from './style';
+import {
+  Container,
+  Logo,
+  Title,
+  ScrollContainer,
+  InputWrapper,
+  Loading,
+  ErrorMessage,
+} from './style';
 
 interface LoginPropsTypes {
   emailInput: string;
@@ -9,9 +17,13 @@ interface LoginPropsTypes {
   passwordInput: string;
   setPasswordInput: (value: string) => void;
   submit: () => void;
+  isLoading: boolean;
+  hasError: boolean;
 }
 
 const Login: FC<LoginPropsTypes> = ({
+  isLoading,
+  hasError,
   emailInput,
   setEmailInput,
   passwordInput,
@@ -39,9 +51,22 @@ const Login: FC<LoginPropsTypes> = ({
           />
         </InputWrapper>
 
-        <Button type="primary" fill={false} onPress={submit}>
+        <Button
+          disabled={isLoading}
+          type="primary"
+          fill={false}
+          onPress={submit}
+        >
           Entrar
         </Button>
+
+        {isLoading && <Loading />}
+        {hasError && (
+          <ErrorMessage>
+            Ocorreu um erro, verifique se seu login está correto e tente
+            novamente mais tarde.
+          </ErrorMessage>
+        )}
       </ScrollContainer>
     </Container>
   );

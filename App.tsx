@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 
 import {
   Montserrat_400Regular,
@@ -10,10 +9,16 @@ import {
 } from '@expo-google-fonts/montserrat';
 
 import Home from './src/views/Pages/Home';
-import Login from './src/views/Pages/Login';
 
 import AuthProvider from './src/application/loginProvider/Provider';
 import AppThemeProvider from './src/views/theme/themeProvider';
+
+import AuthNavigation from './src/views/Navigation/AuthNavigation';
+import UnauthNavigation from './src/views/Navigation/UnauthNavigation';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createContext } from 'react';
+
+export const CheckAuthorizationContext = createContext(() => {});
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,18 +27,38 @@ export default function App() {
     Montserrat_700Bold,
   });
 
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  const checkAuthorization = async () => {
+    const accessToken = await AsyncStorage.getItem('accessToken');
+
+    if (!isAuthorized && accessToken) {
+      setIsAuthorized(true);
+    } else {
+      setIsAuthorized(false);
+    }
+  };
+
+  useEffect(() => {
+    checkAuthorization();
+  }, []);
+
   return (
-    <NavigationContainer>
-      <AuthProvider>
-        <StatusBar barStyle={'light-content'} />
-        {fontsLoaded ? (
-          <AppThemeProvider>
-            <Login />
-          </AppThemeProvider>
-        ) : (
-          <Home />
-        )}
-      </AuthProvider>
-    </NavigationContainer>
+    <AuthProvider>
+      <StatusBar barStyle={'light-content'} />
+      <CheckAuthorizationContext.Provider value={checkAuthorization}>
+        <AppThemeProvider>
+          {fontsLoaded ? (
+            isAuthorized ? (
+              <AuthNavigation />
+            ) : (
+              <UnauthNavigation />
+            )
+          ) : (
+            <Home />
+          )}
+        </AppThemeProvider>
+      </CheckAuthorizationContext.Provider>
+    </AuthProvider>
   );
 }

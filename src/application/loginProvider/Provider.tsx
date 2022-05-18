@@ -11,7 +11,7 @@ export const AuthenticationContext = createContext<ContextType>({
   userDispatch: async () => undefined,
 });
 
-const AuthProvider: FC = ({ children }) => {
+const AuthProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, userDispatch] = useReducer<ReducerType>(reducer, INITIAL_VALUE);
 
   const dispatchWithMiddlewares = async (action: ActionType) => {
