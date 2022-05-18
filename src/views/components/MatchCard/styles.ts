@@ -1,7 +1,5 @@
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import styled from 'styled-components/native';
-
-export const Touchable = styled(TouchableOpacity)``;
 
 export const Container = styled(View)`
   width: 100%;

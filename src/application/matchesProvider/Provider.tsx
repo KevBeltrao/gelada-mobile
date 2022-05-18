@@ -21,8 +21,11 @@ const AuthProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
     if (actions.LIST === action.type) {
       return await middlewares.getMatches(action, matchesDispatch);
     }
+    if (actions.CREATE === action.type) {
+      return await middlewares.createMatch(action, matchesDispatch);
+    }
     if (actions.UPDATE === action.type) {
-      return await middlewares.getMatches(action, matchesDispatch);
+      return await middlewares.updateMatch(action, matchesDispatch);
     }
 
     return matchesDispatch(action);
