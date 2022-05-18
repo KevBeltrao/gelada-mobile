@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 import styled from 'styled-components/native';
 import Whistleimg from '../../theme/assets/icons/assets/whistle.svg';
 
@@ -30,4 +30,8 @@ export const ScreenText = styled(Text)`
   align-items: center;
   text-align: center;
   margin-bottom: 30px;
+`;
+
+export const Loading = styled(ActivityIndicator)`
+  margin-top: 20px;
 `;

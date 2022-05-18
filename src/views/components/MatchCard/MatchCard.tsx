@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  Touchable,
   Container,
   TeamContainer,
   Circle,
@@ -17,29 +16,27 @@ interface MatchCardTypes {
 }
 
 const MatchCard: React.FC<MatchCardTypes> = ({ goalsA, goalsB }) => (
-  <Touchable>
-    <Container>
-      <TeamContainer>
-        <Circle>
-          <TeamLetter>A</TeamLetter>
-        </Circle>
+  <Container>
+    <TeamContainer>
+      <Circle>
+        <TeamLetter>A</TeamLetter>
+      </Circle>
 
-        <TeamText>Azul</TeamText>
-      </TeamContainer>
+      <TeamText>Azul</TeamText>
+    </TeamContainer>
 
-      <ScoreNumber>{goalsA}</ScoreNumber>
-      <MultiplySign />
-      <ScoreNumber>{goalsB}</ScoreNumber>
+    <ScoreNumber>{goalsA}</ScoreNumber>
+    <MultiplySign />
+    <ScoreNumber>{goalsB}</ScoreNumber>
 
-      <TeamContainer>
-        <Circle red>
-          <TeamLetter red>V</TeamLetter>
-        </Circle>
+    <TeamContainer>
+      <Circle red>
+        <TeamLetter red>V</TeamLetter>
+      </Circle>
 
-        <TeamText>Vermelho</TeamText>
-      </TeamContainer>
-    </Container>
-  </Touchable>
+      <TeamText>Vermelho</TeamText>
+    </TeamContainer>
+  </Container>
 );
 
 export default MatchCard;
