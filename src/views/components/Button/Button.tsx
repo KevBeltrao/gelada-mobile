@@ -3,7 +3,7 @@ import { StyledButton, ButtonText } from './styles';
 
 interface ButtonTypes {
   onPress?: () => void;
-  type: 'primary' | 'secondary';
+  type: 'primary' | 'secondary' | 'confirm' | 'transparent';
   fill: boolean;
 }
 

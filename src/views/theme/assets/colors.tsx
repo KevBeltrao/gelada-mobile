@@ -22,6 +22,8 @@ const colors = {
   dark: '#0C1114',
   gray: '#83897C',
   light: '#FEFEFF',
+
+  grayLayer: '#00000066',
 };
 
 export default colors;
